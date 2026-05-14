@@ -1,80 +1,154 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人网站</title>
-</head>
-<body>
-    <h1>你好，世界！</h1>
-    <p>欢迎来到我的第一个个人网站。这里是使用 GitHub Pages 搭建的。</p>
-</body>
-</html>
-=======
-<html lang="en-us">
   <head>
-	<meta name="generator" content="Hugo 0.152.2">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>HLF Blog</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Academic homepage of Lingfeng He, focusing on computer vision, remote sensing image understanding, multimodal reasoning, and generative image editing."
+    />
+    <title>Lingfeng He | Academic Homepage</title>
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/fonts.css" />
-    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
-
   </head>
+  <body class="academic-home">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Lingfeng He homepage">
+        <span class="brand-mark">HLF</span>
+        <span>Lingfeng He</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#profile">Profile</a>
+        <a href="mailto:helingfeng@njust.edu.cn">Email</a>
+      </nav>
+    </header>
 
-  <body>
-    <nav class="header">
-      <div class="banner">
-<a href="/" class="text">
-&Hfr;&Lfr;&Ffr; &Bfr;&Lfr;&Ofr;&Gfr;
-</a>
-</div>
+    <main>
+      <section class="scholar-hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Computer Vision · Remote Sensing · Multimodal AI</p>
+          <h1 id="hero-title">Lingfeng He</h1>
+          <p class="hero-subtitle">
+            I am an M.S. student in Computer Science and Technology at Nanjing
+            University of Science and Technology. My research focuses on visual
+            semantic understanding and generation, especially weakly supervised
+            remote sensing image understanding, multimodal reasoning, and
+            generative image editing for complex intent.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#publications">View Publications</a>
+            <a class="button secondary" href="https://github.com/HE-Lingfeng">
+              GitHub
+            </a>
+          </div>
+        </div>
 
-      <div class="head-meta">
-      
-        <span>HLF Blog</span>
-        <span>2025-11-23</span>
-        
-        
-        
-        <span></span>
-      
-      </div>
-    </nav>
+        <aside class="portrait-card" aria-label="Scholar profile">
+          <div class="portrait-frame">
+            <img
+              class="avatar"
+              src="https://github.com/HE-Lingfeng.png"
+              alt="Lingfeng He portrait"
+            />
+          </div>
+          <p class="profile-name">Lingfeng He</p>
+          <p class="profile-meta">
+            M.S. Student, Computer Science and Technology<br />
+            Nanjing University of Science and Technology
+          </p>
+          <a class="email-link" href="mailto:helingfeng@njust.edu.cn">
+            helingfeng@njust.edu.cn
+          </a>
+        </aside>
+      </section>
 
+      <section class="section research-strip" id="research" aria-labelledby="research-title">
+        <div class="section-kicker">Research Focus</div>
+        <div class="research-copy">
+          <h2 id="research-title">From visual evidence to semantic reasoning.</h2>
+          <p>
+            I study how models perceive, localize, reason, and edit visual content under
+            limited supervision or implicit instructions. My work connects representation
+            learning, contrastive objectives, multimodal language models, and diffusion-based
+            generation.
+          </p>
+        </div>
+      </section>
 
-<div class="container">
-<main class="list">
+      <section class="section" id="publications" aria-labelledby="publications-title">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Publications</p>
+          <h2 id="publications-title">Publications</h2>
+        </div>
 
+        <div class="publication-list">
+          <article class="publication-card featured">
+            <div class="publication-year">2026</div>
+            <div class="publication-main">
+              <p class="publication-status">Under review · ICLR 2026</p>
+              <h3>Reasoning-Guided Generative Image Editing</h3>
+              <p class="authors">Co-first author</p>
+              <p>
+                This project explores generative image editing driven by semantic reasoning
+                rather than explicit low-level instructions. It introduces a reasoning
+                attention mechanism to bridge multimodal language understanding and visual
+                synthesis, enabling edits that depend on world knowledge, abstract intent,
+                and implicit user needs.
+              </p>
+              <div class="publication-links">
+                <a href="https://arxiv.org/abs/2505.17768">arXiv</a>
+              </div>
+            </div>
+          </article>
 
+          <article class="publication-card">
+            <div class="publication-year">2023</div>
+            <div class="publication-main">
+              <p class="publication-status">IGARSS 2023 · EI indexed</p>
+              <h3>
+                Weakly-supervised ROI Extraction Method Based on Contrastive Learning for
+                Remote Sensing Images
+              </h3>
+              <p class="authors">First author</p>
+              <p>
+                This work studies weakly supervised region-of-interest extraction for remote
+                sensing images. It uses Grad-CAM based pseudo labels and a contrastive learning
+                objective to mitigate label noise by pulling positive samples closer while
+                separating positive and negative pairs.
+              </p>
+              <div class="publication-links">
+                <a href="https://arxiv.org/abs/2305.05887">arXiv</a>
+                <a href="https://ieeexplore.ieee.org/document/10283054">IEEE Xplore</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
 
+      <section class="section profile-section" id="profile" aria-labelledby="profile-title">
+        <div class="section-heading">
+          <p class="eyebrow">Academic Profile</p>
+          <h2 id="profile-title">Education</h2>
+        </div>
+        <div class="education-grid">
+          <article class="education-card">
+            <span>2024 - Present</span>
+            <h3>Nanjing University of Science and Technology</h3>
+            <p>M.S. Student, Computer Science and Technology</p>
+          </article>
+          <article class="education-card">
+            <span>2020 - 2024</span>
+            <h3>Beijing Foreign Studies University</h3>
+            <p>B.S., Computer Science and Technology</p>
+          </article>
+        </div>
+      </section>
+    </main>
 
-</main>
-<nav></nav>
-</div>
-
-<script async src="//yihui.org/js/center-img.js"></script>
-
-<footer>
-
-<div class="footer">
-  <ul class="menu">
-    
-  </ul>
-  
-</div>
-</footer>
-
-
-
-
-
-
-
-</body>
+    <footer class="site-footer">
+      <p>© 2026 Lingfeng He. Academic homepage powered by GitHub Pages.</p>
+    </footer>
+  </body>
 </html>
-
->>>>>>> 968346c (Publish website)
