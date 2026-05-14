@@ -1,124 +1,120 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Academic homepage of Lingfeng He, focusing on computer vision, remote sensing image understanding, multimodal reasoning, and generative image editing."
+      content="Lingfeng He's personal academic website, featuring research in multimodal LLM reasoning, image editing and generation, and AI agents."
     />
-    <title>Lingfeng He | Academic Homepage</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <title>Lingfeng He</title>
     <link rel="stylesheet" href="/css/fonts.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body class="academic-home">
+  <body class="home">
     <header class="site-header">
       <a class="brand" href="/" aria-label="Lingfeng He homepage">
-        <span class="brand-mark">HLF</span>
-        <span>Lingfeng He</span>
+        <span class="brand-mark">LH</span>
+        <span class="brand-text">Lingfeng He</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#work">Work</a>
         <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#profile">Profile</a>
-        <a href="mailto:helingfeng@njust.edu.cn">Email</a>
+        <a href="#writing">Writing</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section class="scholar-hero" aria-labelledby="hero-title">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Computer Vision · Remote Sensing · Multimodal AI</p>
-          <h1 id="hero-title">Lingfeng He</h1>
-          <p class="hero-subtitle">
+          <p class="eyebrow">Multimodal Reasoning / Generative AI / AI Agents</p>
+          <h1 id="hero-title">
+            <span class="hero-name-primary">Lingfeng</span>
+            <span class="hero-name-secondary">He</span>
+          </h1>
+          <p class="hero-intro">
             I am an M.S. student in Computer Science and Technology at Nanjing
-            University of Science and Technology. My research focuses on visual
-            semantic understanding and generation, especially weakly supervised
-            remote sensing image understanding, multimodal reasoning, and
-            generative image editing for complex intent.
+            University of Science and Technology. My current interests center
+            on the reasoning capabilities of multimodal large language models,
+            image editing and generation, and AI agents that can plan, use
+            tools, and act in open-ended environments.
           </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#publications">View Publications</a>
-            <a class="button secondary" href="https://github.com/HE-Lingfeng">
-              GitHub
-            </a>
+          <div class="hero-actions" aria-label="Primary links">
+            <a class="button primary" href="#work">Selected Work</a>
+            <a class="button" href="mailto:helingfeng@njust.edu.cn">Email</a>
+            <a class="button quiet" href="https://github.com/HE-Lingfeng">GitHub</a>
           </div>
         </div>
 
-        <aside class="portrait-card" aria-label="Scholar profile">
-          <div class="portrait-frame">
-            <img
-              class="avatar"
-              src="https://github.com/HE-Lingfeng.png"
-              alt="Lingfeng He portrait"
-            />
-          </div>
-          <p class="profile-name">Lingfeng He</p>
-          <p class="profile-meta">
-            M.S. Student, Computer Science and Technology<br />
-            Nanjing University of Science and Technology
-          </p>
-          <a class="email-link" href="mailto:helingfeng@njust.edu.cn">
-            helingfeng@njust.edu.cn
-          </a>
+        <aside class="profile-panel" aria-label="Profile summary">
+          <img
+            class="avatar"
+            src="https://github.com/HE-Lingfeng.png"
+            alt="Lingfeng He portrait"
+          />
         </aside>
       </section>
 
-      <section class="section research-strip" id="research" aria-labelledby="research-title">
-        <div class="section-kicker">Research Focus</div>
-        <div class="research-copy">
-          <h2 id="research-title">From visual evidence to semantic reasoning.</h2>
+      <section class="section signature" aria-labelledby="signature-title">
+        <p class="section-label">Direction</p>
+        <div>
+          <h2 id="signature-title">Building models that reason, create, and act with intent.</h2>
           <p>
-            I study how models perceive, localize, reason, and edit visual content under
-            limited supervision or implicit instructions. My work connects representation
-            learning, contrastive objectives, multimodal language models, and diffusion-based
-            generation.
+            I am interested in how intelligent systems move beyond pattern
+            recognition: how they reason over multimodal context, translate
+            abstract intent into visual creation, and coordinate tool use across
+            multi-step tasks.
           </p>
         </div>
       </section>
 
-      <section class="section" id="publications" aria-labelledby="publications-title">
+      <section class="section" id="work" aria-labelledby="work-title">
         <div class="section-heading">
-          <p class="eyebrow">Selected Publications</p>
-          <h2 id="publications-title">Publications</h2>
+          <p class="eyebrow">Selected Work</p>
+          <h2 id="work-title">Research and Publications</h2>
         </div>
 
-        <div class="publication-list">
-          <article class="publication-card featured">
-            <div class="publication-year">2026</div>
-            <div class="publication-main">
-              <p class="publication-status">Under review · ICLR 2026</p>
+        <div class="work-list">
+          <article class="work-item highlight">
+            <div class="work-meta">
+              <span>2026</span>
+              <span>Preprint</span>
+            </div>
+            <div class="work-content">
+              <p class="publication-status">arXiv preprint</p>
               <h3>Reasoning-Guided Generative Image Editing</h3>
               <p class="authors">Co-first author</p>
               <p>
-                This project explores generative image editing driven by semantic reasoning
-                rather than explicit low-level instructions. It introduces a reasoning
-                attention mechanism to bridge multimodal language understanding and visual
-                synthesis, enabling edits that depend on world knowledge, abstract intent,
-                and implicit user needs.
+                This work explores image editing tasks that require world
+                knowledge, abstract intent, and implicit user needs, studying how
+                multimodal language understanding can be connected with visual
+                generation through a more robust reasoning bridge.
               </p>
-              <div class="publication-links">
+              <div class="link-row">
                 <a href="https://arxiv.org/abs/2505.17768">arXiv</a>
               </div>
             </div>
           </article>
 
-          <article class="publication-card">
-            <div class="publication-year">2023</div>
-            <div class="publication-main">
+          <article class="work-item">
+            <div class="work-meta">
+              <span>2023</span>
+              <span>Past Work</span>
+            </div>
+            <div class="work-content">
               <p class="publication-status">IGARSS 2023 · EI indexed</p>
               <h3>
-                Weakly-supervised ROI Extraction Method Based on Contrastive Learning for
-                Remote Sensing Images
+                Weakly-supervised ROI Extraction Method Based on Contrastive
+                Learning for Remote Sensing Images
               </h3>
               <p class="authors">First author</p>
               <p>
-                This work studies weakly supervised region-of-interest extraction for remote
-                sensing images. It uses Grad-CAM based pseudo labels and a contrastive learning
-                objective to mitigate label noise by pulling positive samples closer while
-                separating positive and negative pairs.
+                This work uses Grad-CAM to generate pseudo labels and applies
+                contrastive learning to mitigate label noise in weakly supervised
+                ROI extraction for remote sensing images.
               </p>
-              <div class="publication-links">
+              <div class="link-row">
                 <a href="https://arxiv.org/abs/2305.05887">arXiv</a>
                 <a href="https://ieeexplore.ieee.org/document/10283054">IEEE Xplore</a>
               </div>
@@ -127,28 +123,78 @@
         </div>
       </section>
 
-      <section class="section profile-section" id="profile" aria-labelledby="profile-title">
+      <section class="section research-grid" id="research" aria-labelledby="research-title">
         <div class="section-heading">
-          <p class="eyebrow">Academic Profile</p>
-          <h2 id="profile-title">Education</h2>
+          <p class="eyebrow">Research Lens</p>
+          <h2 id="research-title">Current Research Directions</h2>
         </div>
-        <div class="education-grid">
-          <article class="education-card">
-            <span>2024 - Present</span>
-            <h3>Nanjing University of Science and Technology</h3>
-            <p>M.S. Student, Computer Science and Technology</p>
+        <div class="cards">
+          <article class="field-card">
+            <span>01</span>
+            <h3>Multimodal LLM Reasoning</h3>
+            <p>Understanding and improving how multimodal models reason across language, images, context, and implicit intent.</p>
           </article>
-          <article class="education-card">
-            <span>2020 - 2024</span>
-            <h3>Beijing Foreign Studies University</h3>
-            <p>B.S., Computer Science and Technology</p>
+          <article class="field-card">
+            <span>02</span>
+            <h3>Image Editing and Generation</h3>
+            <p>Designing generative systems that follow high-level goals, preserve semantic consistency, and produce controllable visual changes.</p>
           </article>
+          <article class="field-card">
+            <span>03</span>
+            <h3>AI Agents</h3>
+            <p>Exploring agents that can plan, call tools, inspect feedback, and complete long-horizon tasks with dependable reasoning.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split-section" id="writing" aria-labelledby="writing-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Writing</p>
+          <h2 id="writing-title">Notes and project logs</h2>
+        </div>
+        <div class="post-gallery" aria-label="Writing gallery">
+          <article class="post-card empty">
+            <p class="post-type">Coming Soon</p>
+            <h3>Paper notes, agent experiments, and project logs will live here.</h3>
+            <p>
+              This gallery is ready for future posts. Each note can become a
+              compact card with a topic, date, summary, and link.
+            </p>
+            <a href="/posts/">Browse all posts</a>
+          </article>
+          <article class="post-card">
+            <p class="post-type">Research Notes</p>
+            <h3>Multimodal reasoning</h3>
+            <p>Short notes on model behavior, failure cases, benchmarks, and reasoning traces.</p>
+          </article>
+          <article class="post-card">
+            <p class="post-type">Project Logs</p>
+            <h3>Agents and generation</h3>
+            <p>Implementation records for agent workflows, image editing systems, and experiments.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Research and collaboration.</h2>
+        </div>
+        <div class="contact-links">
+          <a class="contact-button" href="mailto:helingfeng@njust.edu.cn">
+            <span>Email</span>
+            <small>helingfeng@njust.edu.cn</small>
+          </a>
+          <a class="contact-button" href="https://github.com/HE-Lingfeng">
+            <span>GitHub</span>
+            <small>github.com/HE-Lingfeng</small>
+          </a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 Lingfeng He. Academic homepage powered by GitHub Pages.</p>
+      <p>© 2026 Lingfeng He. Built for long-term research notes and selected work.</p>
     </footer>
   </body>
 </html>
