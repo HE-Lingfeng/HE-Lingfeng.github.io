@@ -1,22 +1,24 @@
 :root {
   color-scheme: light;
-  --paper: #eaf5fb;
-  --surface: #ffffff;
-  --surface-soft: #e8f3fb;
-  --glass: rgba(255, 255, 255, 0.58);
-  --glass-strong: rgba(255, 255, 255, 0.74);
-  --ink: #151716;
-  --muted: #626a67;
-  --subtle: #8a928e;
-  --line: rgba(30, 42, 38, 0.12);
-  --line-strong: rgba(30, 42, 38, 0.2);
-  --accent: #214f49;
-  --accent-soft: rgba(94, 141, 133, 0.14);
-  --clay: #526d78;
-  --gold: #47716c;
-  --mist: #d4e9f7;
-  --shadow: 0 24px 70px rgba(36, 45, 42, 0.12);
-  --glass-shadow: 0 18px 60px rgba(42, 52, 49, 0.1),
+  --paper: #dcecf6;
+  --surface: #f8fcff;
+  --surface-soft: #e7f2f9;
+  --glass: rgba(255, 255, 255, 0.46);
+  --glass-strong: rgba(255, 255, 255, 0.68);
+  --ink: #12191d;
+  --muted: #596a73;
+  --subtle: #7b8b93;
+  --line: rgba(28, 52, 64, 0.13);
+  --line-strong: rgba(28, 52, 64, 0.22);
+  --accent: #174c5a;
+  --accent-deep: #0e323b;
+  --accent-soft: rgba(23, 76, 90, 0.13);
+  --clay: #4e6876;
+  --gold: #286273;
+  --mist: #c8e0ee;
+  --pulse: #9a3f4f;
+  --shadow: 0 24px 70px rgba(31, 57, 70, 0.13);
+  --glass-shadow: 0 18px 60px rgba(31, 57, 70, 0.11),
     inset 0 1px 0 rgba(255, 255, 255, 0.78);
   --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
     Inter, "Segoe UI", Arial, sans-serif;
@@ -71,9 +73,9 @@ h3 {
 h1 {
   max-width: 920px;
   font-family: var(--font-ui);
-  font-size: clamp(3.15rem, 5.8vw, 5.15rem);
-  font-weight: 780;
-  line-height: 0.98;
+  font-size: clamp(3.1rem, 5.6vw, 5.05rem);
+  font-weight: 790;
+  line-height: 0.96;
 }
 
 .hero-name-primary,
@@ -117,11 +119,11 @@ main,
   gap: 24px;
   margin-top: 14px;
   padding: 10px 14px;
-  border: 1px solid rgba(41, 65, 77, 0.12);
-  border-radius: 18px;
-  background: rgba(250, 253, 255, 0.58);
-  backdrop-filter: blur(18px) saturate(1.28);
-  box-shadow: 0 18px 52px rgba(61, 82, 94, 0.1),
+  border: 1px solid rgba(32, 62, 78, 0.14);
+  border-radius: 20px;
+  background: rgba(248, 253, 255, 0.56);
+  backdrop-filter: blur(22px) saturate(1.34);
+  box-shadow: 0 18px 52px rgba(36, 64, 78, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.76);
 }
 
@@ -147,7 +149,7 @@ main,
   display: grid;
   place-items: center;
   border: 1px solid var(--line-strong);
-  border-radius: 8px;
+  border-radius: 10px;
   color: var(--accent);
   background: var(--glass);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
@@ -166,6 +168,7 @@ main,
 }
 
 .site-nav a {
+  position: relative;
   padding: 7px 10px;
   border-radius: 999px;
 }
@@ -191,8 +194,26 @@ footer a,
 }
 
 .site-nav a:hover {
-  background: rgba(255, 255, 255, 0.54);
-  box-shadow: inset 0 0 0 1px rgba(41, 65, 77, 0.08);
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 0 1px rgba(30, 60, 75, 0.1);
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.site-nav a:hover::after {
+  opacity: 0.58;
+  transform: scaleX(1);
 }
 
 .hero {
@@ -222,11 +243,19 @@ footer a,
   text-transform: uppercase;
 }
 
-.hero-intro {
+.hero-intro,
+.hero-philosophy {
   max-width: 760px;
   margin: 30px 0 0;
   color: var(--muted);
   font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+}
+
+.hero-philosophy {
+  max-width: 680px;
+  margin-top: 18px;
+  color: var(--clay);
+  font-size: clamp(0.98rem, 1.12vw, 1.08rem);
 }
 
 .hero-actions {
@@ -241,20 +270,22 @@ footer a,
   align-items: center;
   justify-content: center;
   border: 1px solid var(--line-strong);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 0 16px;
   color: var(--ink);
   background: var(--glass);
   backdrop-filter: blur(18px) saturate(1.25);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
   font-weight: 720;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease,
+    background-color 180ms ease;
 }
 
 .button.primary {
   border-color: var(--accent);
   color: #fff;
-  background: var(--accent);
-  box-shadow: 0 14px 36px rgba(33, 79, 73, 0.24),
+  background: var(--accent-deep);
+  box-shadow: 0 14px 36px rgba(14, 50, 59, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.16);
 }
 
@@ -262,12 +293,19 @@ footer a,
   color: var(--muted);
 }
 
+.button:hover {
+  border-color: rgba(23, 76, 90, 0.34);
+  transform: translateY(-1px);
+  box-shadow: 0 16px 38px rgba(31, 57, 70, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.76);
+}
+
 .profile-panel {
   align-self: center;
   width: min(292px, 100%);
   padding: 14px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 14px;
   background: var(--glass);
   backdrop-filter: blur(22px) saturate(1.3);
   box-shadow: var(--glass-shadow);
@@ -277,7 +315,7 @@ footer a,
   width: 100%;
   aspect-ratio: 1;
   display: block;
-  border-radius: 8px;
+  border-radius: 10px;
   object-fit: cover;
   filter: saturate(0.88) contrast(1.02);
 }
@@ -294,6 +332,16 @@ footer a,
 
 .section-heading.compact {
   margin-bottom: 0;
+}
+
+.section-link {
+  width: fit-content;
+  display: inline-block;
+  margin-top: 22px;
+  border-bottom: 1px solid currentColor;
+  color: var(--accent);
+  font-weight: 720;
+  text-decoration: none;
 }
 
 .signature {
@@ -329,14 +377,14 @@ footer a,
   gap: clamp(22px, 4vw, 54px);
   padding: 30px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 14px;
   background: var(--glass);
   backdrop-filter: blur(22px) saturate(1.28);
   box-shadow: var(--glass-shadow);
 }
 
 .work-item.highlight {
-  border-color: rgba(39, 79, 70, 0.28);
+  border-color: rgba(23, 76, 90, 0.28);
   background: var(--glass-strong);
 }
 
@@ -383,6 +431,12 @@ footer a,
   font-weight: 720;
 }
 
+.link-row a:hover,
+.post-card a:hover,
+.section-link:hover {
+  color: var(--accent-deep);
+}
+
 .research-grid .section-heading {
   margin-bottom: 28px;
 }
@@ -400,10 +454,11 @@ footer a,
   justify-content: space-between;
   padding: 24px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 14px;
   background: var(--glass);
   backdrop-filter: blur(20px) saturate(1.24);
   box-shadow: var(--glass-shadow);
+  transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
 }
 
 .field-card span {
@@ -413,6 +468,13 @@ footer a,
 .field-card p {
   margin: 28px 0 0;
   color: var(--muted);
+}
+
+.field-card:hover,
+.work-item:hover,
+.post-card:hover {
+  border-color: rgba(23, 76, 90, 0.26);
+  transform: translateY(-2px);
 }
 
 .contact-section {
@@ -432,14 +494,15 @@ footer a,
   justify-content: space-between;
   padding: 22px;
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   background: var(--glass);
   backdrop-filter: blur(20px) saturate(1.22);
   box-shadow: var(--glass-shadow);
+  transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
 }
 
-.post-card.empty {
-  background: var(--glass-strong);
+.journal-card {
+  background: rgba(255, 255, 255, 0.54);
 }
 
 .post-type {
@@ -455,6 +518,19 @@ footer a,
 .post-card p:not(.post-type) {
   margin: 14px 0 0;
   color: var(--muted);
+}
+
+.journal-card h3 {
+  font-size: clamp(1.18rem, 1.7vw, 1.58rem);
+  font-weight: 700;
+}
+
+.journal-card .post-type {
+  color: var(--pulse);
+}
+
+.journal-card p:not(.post-type) {
+  color: #51616a;
 }
 
 .post-card a {
@@ -481,15 +557,16 @@ footer a,
   gap: 6px;
   padding: 18px 20px;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 14px;
   color: var(--ink);
   background: var(--glass);
   backdrop-filter: blur(20px) saturate(1.25);
   box-shadow: var(--glass-shadow);
+  transition: border-color 180ms ease, transform 180ms ease, background-color 180ms ease;
 }
 
 .contact-button:hover {
-  border-color: rgba(33, 79, 73, 0.32);
+  border-color: rgba(23, 76, 90, 0.32);
   transform: translateY(-1px);
 }
 
@@ -523,7 +600,7 @@ footer a,
   padding: 28px 0 18px;
   border-top: 5px solid var(--accent);
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.84);
+  background: rgba(255, 255, 255, 0.72);
   text-align: center;
 }
 
@@ -571,7 +648,7 @@ footer a,
 }
 
 .list section,
-article:not(.work-item):not(.field-card) {
+article:not(.work-item):not(.field-card):not(.post-card) {
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 16px;
