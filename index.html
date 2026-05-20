@@ -8,8 +8,16 @@
       content="Lingfeng He's personal academic website for research in multimodal reasoning, generative AI, AI agents, and a restrained journal of notes on literature and art."
     />
     <title>Lingfeng He</title>
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("theme");
+        document.documentElement.dataset.theme =
+          savedTheme === "light" ? "light" : "dark";
+      })();
+    </script>
     <link rel="stylesheet" href="/css/fonts.css" />
     <link rel="stylesheet" href="/css/style.css" />
+    <script src="/js/theme.js" defer></script>
   </head>
   <body class="home">
     <header class="site-header">
@@ -17,12 +25,24 @@
         <span class="brand-mark">HLF</span>
         <span class="brand-text">Lingfeng He</span>
       </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#research">Research</a>
-        <a href="#writing">Writing</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-actions">
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#work">Work</a>
+          <a href="#research">Research</a>
+          <a href="#writing">Writing</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to light theme"
+          aria-pressed="true"
+        >
+          <span class="theme-toggle-knob" aria-hidden="true"></span>
+          <span class="theme-toggle-text" data-theme-toggle-text>Dark</span>
+        </button>
+      </div>
     </header>
 
     <main>

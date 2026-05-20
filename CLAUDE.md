@@ -21,8 +21,9 @@ git push origin main
 
 **Hand-crafted homepage (the primary surface):**
 - `index.html` — semantic HTML with sections: hero, selected work, research directions, writing gallery, contact
-- `css/style.css` — full visual system: CSS custom properties (design tokens), typography scale, layout, glassmorphism effects, two responsive breakpoints (900px, 560px)
+- `css/style.css` — full visual system: CSS custom properties (design tokens), light/dark theme tokens, typography scale, layout, glassmorphism effects, two responsive breakpoints (900px, 560px)
 - `css/fonts.css` — font stacks with CJK fallbacks
+- `js/theme.js` — lightweight theme toggle behavior; persists the selected theme in `localStorage`
 - `assets/portrait.jpg` — hero portrait
 
 **Hugo-generated pages (legacy, mostly empty):**
@@ -32,10 +33,31 @@ git push origin main
 
 ## Design system
 
-- Blue-toned glassmorphism aesthetic with light color scheme
-- Design tokens defined as CSS custom properties on `:root` in `style.css`
-- `clamp()` based responsive typography
-- If adding pages, reuse the existing CSS custom properties and class conventions rather than introducing new styling approaches
+The current design language is X/Twitter-inspired restraint plus macOS-style system polish: black/white foundations, sky-blue emphasis, generous rounded glass surfaces, and compact controls.
+
+**Theme and color**
+- Dark mode is the default. Light mode is defined with `:root[data-theme="light"]`.
+- Use `--paper` for the page background: pure black in dark mode, pure white in light mode.
+- Use neutral translucent surfaces (`--glass`, `--glass-strong`, `--chrome`) for cards and header.
+- Use X-style sky blue (`--accent`, currently `#1d9bf0`) sparingly for links, primary actions, labels, hover borders, and the theme toggle knob.
+- Avoid introducing broad gradients, decorative blobs, one-off color palettes, or large colored backgrounds.
+
+**Typography**
+- Use the Apple/system sans-serif stack throughout: `-apple-system`, `SF Pro Display`, `SF Pro Text`, Inter, Segoe UI, Arial.
+- Keep body, card, and metadata typography in the same system family. Do not reintroduce serif body text on the homepage unless creating a deliberately editorial writing view.
+- Keep letter spacing at `0` for normal headings and body text; small uppercase labels may use modest positive tracking.
+
+**Shape and surfaces**
+- Cards use `--radius-card`; larger framed panels use `--radius-panel`.
+- Prefer subtle borders, translucent fills, and layered shadows over heavy outlines or decorative containers.
+- Buttons are pill-shaped. Keep controls compact and system-like.
+
+**Layout and interaction**
+- Preserve the curated homepage structure: hero, identity strip, selected work, research directions, writing gallery, contact.
+- Keep sections spacious and scan-friendly; avoid marketing landing-page ornament.
+- Theme switching lives in the header through `[data-theme-toggle]` and `js/theme.js`.
+- If adding pages, reuse existing design tokens and class conventions rather than introducing a new styling approach.
+- `clamp()` based responsive typography and the existing 900px/560px breakpoints should remain the baseline.
 
 ## Content philosophy (from README)
 
