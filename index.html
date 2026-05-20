@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Lingfeng He's personal academic website for research in multimodal reasoning, generative AI, AI agents, and a restrained journal of notes on literature and art."
+      content="Lingfeng He's One Person Lab: a personal AI research studio for multimodal reasoning, generative AI, AI agents, literature workflows, and research notes."
     />
-    <title>Lingfeng He</title>
+    <title>Lingfeng He's One Person Lab</title>
     <script>
       (() => {
         const savedTheme = localStorage.getItem("theme");
@@ -16,8 +16,8 @@
       })();
     </script>
     <link rel="stylesheet" href="/css/fonts.css" />
-    <link rel="stylesheet" href="/css/style.css?v=20260520" />
-    <script src="/js/theme.js?v=20260520" defer></script>
+    <link rel="stylesheet" href="/css/style.css?v=20260521" />
+    <script src="/js/theme.js?v=20260521" defer></script>
   </head>
   <body class="home">
     <header class="site-header">
@@ -27,9 +27,10 @@
       </a>
       <div class="header-actions">
         <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#crew">Crew</a>
+          <a href="#workflow">Workflow</a>
           <a href="#work">Work</a>
-          <a href="#research">Research</a>
-          <a href="#writing">Writing</a>
+          <a href="#notes">Notes</a>
           <a href="#contact">Contact</a>
         </nav>
         <button
@@ -48,27 +49,25 @@
     <main>
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Multimodal Reasoning / Generative AI / AI Agents</p>
+          <p class="eyebrow">One Person Lab / AI Research Studio</p>
           <h1 id="hero-title">
-            <span class="hero-name-primary">Lingfeng</span>
-            <span class="hero-name-secondary">He</span>
+            <span class="hero-name-primary">Lingfeng He's</span>
+            <span class="hero-name-secondary">One Person Lab</span>
           </h1>
           <p class="hero-intro">
-            I am an M.S. student in Computer Science and Technology at Nanjing
-            University of Science and Technology. My current interests center
-            on the reasoning capabilities of multimodal large language models,
-            image editing and generation, and AI agents that can plan, use
-            tools, and act in open-ended environments.
+            A personal research studio where one human works with a small AI
+            crew to read papers, find research gaps, design experiments, write
+            notes, and build toward better multimodal reasoning systems.
           </p>
 
           <dl class="identity-strip" aria-label="Profile details">
             <div>
-              <dt>Current</dt>
-              <dd>M.S. Student</dd>
+              <dt>Human</dt>
+              <dd>M.S. Student at NJUST</dd>
             </div>
             <div>
-              <dt>Base</dt>
-              <dd>NJUST</dd>
+              <dt>Lab Mode</dt>
+              <dd>Reading / Ideating / Building</dd>
             </div>
             <div>
               <dt>Focus</dt>
@@ -76,43 +75,178 @@
             </div>
           </dl>
           <div class="hero-actions" aria-label="Primary links">
-            <a class="button primary" href="#work">Selected Work</a>
+            <a class="button primary" href="#crew">Meet the Crew</a>
+            <a class="button" href="#workflow">Lab Workflow</a>
             <a class="button" href="mailto:helingfeng@njust.edu.cn">Email</a>
             <a class="button quiet" href="https://github.com/HE-Lingfeng">GitHub</a>
           </div>
         </div>
 
-        <aside class="profile-panel" aria-label="Profile summary">
+        <aside class="lab-console" aria-label="Lab leader">
           <img
             class="avatar"
             src="/assets/portrait.jpg"
             alt="Lingfeng He portrait"
           />
-          <div class="portrait-meta" aria-hidden="true">
+          <div class="portrait-meta" aria-label="Portrait details">
             <span>Lingfeng He</span>
             <span>2026</span>
+          </div>
+          <div class="leader-badge">
+            <span>Lab Leader</span>
+            <strong>Lingfeng He</strong>
           </div>
         </aside>
       </section>
 
-      <section class="section signature" aria-labelledby="signature-title">
-        <p class="section-label">Direction</p>
-        <div>
-          <h2 id="signature-title">Building models that reason, create, and act with intent.</h2>
-          <p>
-            I am interested in how intelligent systems move beyond pattern
-            recognition: how they reason over multimodal context, translate
-            abstract intent into visual creation, and coordinate tool use across
-            multi-step tasks. This site is also a quiet place for the notes,
-            fragments, and aesthetic questions that shape how I think.
-          </p>
+      <section class="section crew-section" id="crew" aria-labelledby="crew-title">
+        <div class="section-heading crew-heading">
+          <h2 id="crew-title">AI Crew</h2>
+          <p>Five named crews inside the lab.</p>
         </div>
+
+        <div class="crew-grid">
+          <article class="crew-card featured">
+            <div class="crew-card-head">
+              <div class="crew-avatar ada" aria-hidden="true">
+                <span>A</span>
+              </div>
+              <div>
+                <p class="crew-role">Literature Scout</p>
+                <h3>Ada</h3>
+              </div>
+            </div>
+            <p>
+              Collects papers, parses PDFs, keeps Zotero-oriented metadata tidy,
+              and turns raw sources into material the lab can actually reason over.
+            </p>
+            <div class="capability-row">
+              <span>PDF ingest</span>
+              <span>Zotero</span>
+              <span>Search</span>
+            </div>
+          </article>
+          <article class="crew-card">
+            <div class="crew-card-head">
+              <div class="crew-avatar mira" aria-hidden="true">
+                <span>M</span>
+              </div>
+              <div>
+                <p class="crew-role">Paper Reader</p>
+                <h3>Mira</h3>
+              </div>
+            </div>
+            <p>
+              Reads papers in chunks, synthesizes reports, performs method deep
+              dives, and separates real contributions from surface-level claims.
+            </p>
+            <div class="capability-row">
+              <span>Deep read</span>
+              <span>Methods</span>
+              <span>Limits</span>
+            </div>
+          </article>
+          <article class="crew-card">
+            <div class="crew-card-head">
+              <div class="crew-avatar noah" aria-hidden="true">
+                <span>N</span>
+              </div>
+              <div>
+                <p class="crew-role">Research Strategist</p>
+                <h3>Noah</h3>
+              </div>
+            </div>
+            <p>
+              Searches for gaps, turns observations into candidate proposals,
+              and keeps experiments grounded in falsifiable questions.
+            </p>
+            <div class="capability-row">
+              <span>Gap finding</span>
+              <span>Ideas</span>
+              <span>Experiments</span>
+            </div>
+          </article>
+          <article class="crew-card">
+            <div class="crew-card-head">
+              <div class="crew-avatar iris" aria-hidden="true">
+                <span>I</span>
+              </div>
+              <div>
+                <p class="crew-role">Knowledge Archivist</p>
+                <h3>Iris</h3>
+              </div>
+            </div>
+            <p>
+              Converts reading into literature cards, journals, and durable
+              memory so useful ideas can come back when the lab needs them.
+            </p>
+            <div class="capability-row">
+              <span>Cards</span>
+              <span>Journal</span>
+              <span>Memory</span>
+            </div>
+          </article>
+          <article class="crew-card">
+            <div class="crew-card-head">
+              <div class="crew-avatar theo" aria-hidden="true">
+                <span>T</span>
+              </div>
+              <div>
+                <p class="crew-role">Studio Writer</p>
+                <h3>Theo</h3>
+              </div>
+            </div>
+            <p>
+              Shapes drafts, presentation plans, and research-group briefings
+              from the lab's accumulated reading and experiment direction.
+            </p>
+            <div class="capability-row">
+              <span>Writing</span>
+              <span>Slides</span>
+              <span>Notion</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section workflow-section" id="workflow" aria-labelledby="workflow-title">
+        <div class="section-heading">
+          <p class="eyebrow">Lab Workflow</p>
+          <h2 id="workflow-title">From paper intake to research output.</h2>
+        </div>
+        <ol class="workflow-steps" aria-label="One Person Lab workflow">
+          <li>
+            <span>01</span>
+            <h3>Ingest</h3>
+            <p>Bring in PDFs, notes, links, figures, and external literature context.</p>
+          </li>
+          <li>
+            <span>02</span>
+            <h3>Read</h3>
+            <p>Chunk the paper, synthesize claims, inspect methods, and record limits.</p>
+          </li>
+          <li>
+            <span>03</span>
+            <h3>Archive</h3>
+            <p>Create literature cards and journals that keep the research memory alive.</p>
+          </li>
+          <li>
+            <span>04</span>
+            <h3>Propose</h3>
+            <p>Turn gaps into research questions, small experiments, and next actions.</p>
+          </li>
+          <li>
+            <span>05</span>
+            <h3>Present</h3>
+            <p>Convert the strongest thread into writing, slides, or a project log.</p>
+          </li>
+        </ol>
       </section>
 
       <section class="section" id="work" aria-labelledby="work-title">
         <div class="section-heading">
-          <p class="eyebrow">Selected Work</p>
-          <h2 id="work-title">Research and Publications</h2>
+          <p class="eyebrow">Human Output</p>
+          <h2 id="work-title">Selected research and publications.</h2>
         </div>
 
         <div class="work-list">
@@ -187,10 +321,10 @@
         </div>
       </section>
 
-      <section class="section split-section" id="writing" aria-labelledby="writing-title">
+      <section class="section split-section" id="notes" aria-labelledby="notes-title">
         <div class="section-heading compact">
-          <p class="eyebrow">Writing</p>
-          <h2 id="writing-title">Notes, project logs, and a quiet journal</h2>
+          <p class="eyebrow">Lab Notes</p>
+          <h2 id="notes-title">Research notes, agent logs, and a quiet journal.</h2>
           <a class="section-link" href="/posts/">Browse all posts</a>
         </div>
         <div class="post-gallery" aria-label="Writing gallery">
@@ -203,8 +337,8 @@
             </p>
           </article>
           <article class="post-card">
-            <p class="post-type">Project Logs</p>
-            <h3>Agents and generation</h3>
+            <p class="post-type">Agent Logs</p>
+            <h3>LabCrew and generation</h3>
             <p>
               Implementation records for agent workflows, image editing systems,
               and experiments that deserve to be remembered.
@@ -240,7 +374,7 @@
     </main>
 
     <footer class="site-footer">
-      <p>© 2026 Lingfeng He. Built for long-term research notes and selected work.</p>
+      <p>© 2026 Lingfeng He. Built as a One Person Lab for research notes, AI crews, and selected work.</p>
     </footer>
   </body>
 </html>
