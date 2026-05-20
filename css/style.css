@@ -29,6 +29,8 @@
     inset 0 -1px 0 rgba(28, 52, 64, 0.1);
   --font-ui: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
     Inter, "Segoe UI", Arial, sans-serif;
+  --font-text: Charter, "Bitstream Charter", "Sitka Text", Georgia, "Noto Serif",
+    "Source Han Serif SC", "Noto Serif CJK SC", "Songti SC", serif;
   --font-mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
@@ -150,21 +152,36 @@ main,
 }
 
 .brand-mark {
-  width: 38px;
-  height: 38px;
+  width: 48px;
+  height: 42px;
   display: grid;
   place-items: center;
   border: 1px solid var(--line-strong);
-  border-radius: 10px;
+  border-radius: 12px;
   color: var(--accent);
   background: var(--glass);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  backdrop-filter: blur(28px) saturate(1.42);
+  box-shadow: var(--glass-shadow);
+  font-size: 0.76rem;
+  font-weight: 760;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease,
+    background-color 180ms ease;
+}
+.brand:hover .brand-mark {
+  border-color: rgba(23, 76, 90, 0.32);
+  background: var(--glass-hover);
+  box-shadow: var(--glass-shadow-lift);
+  transform: translateY(-1px);
 }
 
 .brand-text {
   white-space: nowrap;
+  transition: color 180ms ease;
+}
+.brand:hover .brand-text {
+  color: var(--accent);
 }
 
 .site-nav {
@@ -249,23 +266,17 @@ footer a,
   text-transform: uppercase;
 }
 
-.hero-intro,
-.hero-philosophy {
+.hero-intro {
   max-width: 760px;
   margin: 30px 0 0;
   color: var(--muted);
+  font-family: var(--font-text);
   font-size: clamp(1.05rem, 1.35vw, 1.22rem);
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
 }
 
-.hero-philosophy {
-  max-width: 680px;
-  margin-top: 18px;
-  color: var(--clay);
-  font-size: clamp(0.98rem, 1.12vw, 1.08rem);
-}
 
 .identity-strip {
   max-width: 760px;
@@ -439,6 +450,7 @@ footer a,
   max-width: 720px;
   margin: 22px 0 0;
   color: var(--muted);
+  font-family: var(--font-text);
   font-size: 1.08rem;
 }
 
@@ -493,6 +505,7 @@ footer a,
 .work-content p:not(.publication-status):not(.authors) {
   max-width: 820px;
   color: var(--muted);
+  font-family: var(--font-text);
 }
 
 .link-row {
@@ -544,6 +557,7 @@ footer a,
 .field-card p {
   margin: 28px 0 0;
   color: var(--muted);
+  font-family: var(--font-text);
 }
 
 .field-card:hover,
@@ -596,6 +610,7 @@ footer a,
 .post-card p:not(.post-type) {
   margin: 14px 0 0;
   color: var(--muted);
+  font-family: var(--font-text);
 }
 
 .journal-card h3 {
@@ -609,6 +624,7 @@ footer a,
 
 .journal-card p:not(.post-type) {
   color: #51616a;
+  font-family: var(--font-text);
 }
 
 .post-card a {
@@ -656,6 +672,7 @@ footer a,
 
 .contact-button small {
   color: var(--muted);
+  font-family: var(--font-text);
   font-size: 0.92rem;
   overflow-wrap: anywhere;
 }
@@ -897,8 +914,7 @@ td {
     width: 100%;
   }
 
-  .hero-intro,
-  .hero-philosophy {
+  .hero-intro {
     text-align: left;
   }
 
