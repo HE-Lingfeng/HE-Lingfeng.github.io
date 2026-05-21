@@ -697,6 +697,22 @@ footer a,
   font-weight: 720;
 }
 
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-links img {
+  width: 18px;
+  height: 18px;
+  filter: invert(1);
+}
+
+:root[data-theme="light"] .project-links img {
+  filter: none;
+}
+
 .link-row a:hover,
 .post-card a:hover,
 .section-link:hover {
