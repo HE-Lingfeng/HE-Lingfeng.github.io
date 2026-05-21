@@ -277,15 +277,15 @@ footer a,
 }
 
 .theme-toggle {
-  min-width: 82px;
+  width: 88px;
   height: 42px;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+  justify-content: center;
+  gap: 0;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
-  padding: 4px 11px 4px 5px;
+  padding: 6px;
   color: var(--ink);
   background: var(--glass);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -293,6 +293,7 @@ footer a,
   font-size: 0.82rem;
   font-weight: 720;
   cursor: pointer;
+  position: relative;
   transition: border-color 180ms ease, background-color 180ms ease,
     color 180ms ease, transform 180ms ease;
 }
@@ -304,18 +305,35 @@ footer a,
 }
 
 .theme-toggle-knob {
+  position: absolute;
+  top: 6px;
+  left: 6px;
   width: 30px;
   height: 30px;
-  flex: 0 0 auto;
   border-radius: 50%;
   background: var(--accent);
   box-shadow: 0 8px 22px rgba(29, 155, 240, 0.32),
     inset 0 1px 0 rgba(255, 255, 255, 0.32);
+  z-index: 2;
+  transition: left 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:root[data-theme="light"] .theme-toggle-knob {
+  left: 52px;
 }
 
 .theme-toggle-text {
   min-width: 34px;
   text-align: center;
+  z-index: 1;
+  transition: margin 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-left: 22px;
+  margin-right: 0;
+}
+
+:root[data-theme="light"] .theme-toggle-text {
+  margin-left: 0;
+  margin-right: 22px;
 }
 
 .site-nav a::after {
@@ -1207,42 +1225,7 @@ td {
   }
 
   .theme-toggle {
-    width: 88px;
-    height: 42px;
-    min-width: 0;
-    padding: 6px;
     flex-shrink: 0;
-    position: relative;
-    justify-content: center;
-  }
-
-  .theme-toggle-text {
-    display: inline;
-    font-size: 0.78rem;
-    font-weight: 700;
-    z-index: 1;
-    transition: margin 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-left: 22px;
-    margin-right: 0;
-  }
-
-  :root[data-theme="light"] .theme-toggle-text {
-    margin-left: 0;
-    margin-right: 22px;
-  }
-
-  .theme-toggle-knob {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 30px;
-    height: 30px;
-    z-index: 2;
-    transition: left 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  :root[data-theme="light"] .theme-toggle-knob {
-    left: 53px;
   }
 
   .hero,
