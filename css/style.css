@@ -1221,6 +1221,14 @@ td {
     font-size: 0.78rem;
     font-weight: 700;
     z-index: 1;
+    transition: margin 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 22px;
+    margin-right: 0;
+  }
+
+  :root[data-theme="light"] .theme-toggle-text {
+    margin-left: 0;
+    margin-right: 22px;
   }
 
   .theme-toggle-knob {
