@@ -1178,6 +1178,8 @@ td {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     font-size: 0.85rem;
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
+    mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
   }
 
   .site-nav::-webkit-scrollbar {
@@ -1212,6 +1214,29 @@ td {
   .theme-toggle-knob {
     width: 24px;
     height: 24px;
+  }
+
+  .theme-toggle {
+    position: relative;
+  }
+
+  .theme-toggle:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.78);
+    color: #fff;
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .hero,
