@@ -1165,6 +1165,12 @@ td {
     padding: 6px 10px;
     border-radius: 24px;
     min-height: 0;
+    background: rgba(12, 14, 16, 0.48);
+    backdrop-filter: blur(32px) saturate(1.5);
+    -webkit-backdrop-filter: blur(32px) saturate(1.5);
+  }
+  :root[data-theme="light"] .site-header {
+    background: rgba(255, 255, 255, 0.6);
   }
 
   .brand-text {
