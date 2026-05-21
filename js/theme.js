@@ -13,10 +13,7 @@
       "aria-label",
       isLight ? "Switch to dark theme" : "Switch to light theme"
     );
-    toggle.setAttribute(
-      "data-tooltip",
-      isLight ? "Dark mode" : "Light mode"
-    );
+
     label.textContent = isLight ? "Light" : "Dark";
   };
 
