@@ -369,7 +369,6 @@ footer a,
   line-height: 1.62;
 }
 
-
 .identity-strip {
   max-width: 760px;
   display: grid;
@@ -1159,22 +1158,60 @@ td {
 
 @media (max-width: 900px) {
   .site-header {
-    position: static;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 18px 0;
-    backdrop-filter: none;
+    position: sticky;
+    top: 10px;
+    gap: 10px;
+    margin-top: 10px;
+    padding: 6px 10px;
+    border-radius: 24px;
+    min-height: 0;
+  }
+
+  .brand-text {
+    display: none;
   }
 
   .site-nav {
-    width: 100%;
-    flex-wrap: wrap;
+    flex: 1;
+    gap: 4px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    font-size: 0.85rem;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav a {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    white-space: nowrap;
   }
 
   .header-actions {
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex: 1;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .theme-toggle {
+    min-width: 36px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle-text {
+    display: none;
+  }
+
+  .theme-toggle-knob {
+    width: 24px;
+    height: 24px;
   }
 
   .hero,
@@ -1252,19 +1289,21 @@ td {
     padding: 62px 0;
   }
 
-  .button {
-    width: 100%;
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
-  .header-actions {
-    align-items: stretch;
-    flex-direction: column;
+  .hero-actions .button {
+    width: auto;
+    min-height: 40px;
+    padding: 0 14px;
+    font-size: 0.9rem;
   }
 
-  .theme-toggle {
-    width: 100%;
-    justify-content: center;
-    padding-right: 5px;
+  .hero-actions .button.primary {
+    grid-column: span 2;
   }
 
   .work-item,
