@@ -1,64 +1,90 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <title>Posts | HLF Blog</title>
-    <link rel="stylesheet" href="/css/style.css?v=20260521" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Research notes, agent logs, paper reading, and quiet journal entries by Lingfeng He."
+    />
+    <title>Posts — Lingfeng He's One Person Lab</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem("theme");
+        document.documentElement.dataset.theme =
+          savedTheme === "light" ? "light" : "dark";
+      })();
+    </script>
     <link rel="stylesheet" href="/css/fonts.css" />
-    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/css/style.css?v=20260527" />
+    <script src="/js/theme.js?v=20260521" defer></script>
   </head>
-
   <body>
-    <nav class="header">
-      <div class="banner">
-<a href="/" class="text">
-&Hfr;&Lfr;&Ffr; &Bfr;&Lfr;&Ofr;&Gfr;
-</a>
-</div>
-
-      <div class="head-meta">
-      
-        <span>Posts</span>
-        <span>2025-11-23</span>
-        
-        
-        
-        <span></span>
-      
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Lingfeng He's One Person Lab homepage">
+        <span class="brand-mark">HLF</span>
+        <span class="brand-text">Lingfeng He's One Person Lab</span>
+      </a>
+      <div class="header-actions">
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="/#crew">Crew</a>
+          <a href="/#research">Research</a>
+          <a href="/#work">Work</a>
+          <a href="/#notes">Notes</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+        <button
+          class="theme-toggle"
+          type="button"
+          data-theme-toggle
+          aria-label="Switch to light theme"
+          aria-pressed="true"
+        >
+          <span class="theme-toggle-knob" aria-hidden="true"></span>
+          <span class="theme-toggle-text" data-theme-toggle-text>Dark</span>
+        </button>
       </div>
-    </nav>
+    </header>
 
+    <main>
+      <section class="section" aria-labelledby="posts-title">
+        <div class="section-heading">
+          <p class="eyebrow">Lab Notes</p>
+          <h1 id="posts-title">Notes, logs, and quiet writing.</h1>
+        </div>
 
-<div class="container">
-<main class="list">
+        <div class="posts-toolbar">
+          <nav class="tab-bar" role="tablist" aria-label="Filter by category">
+            <button class="tab-item active" role="tab" aria-selected="true">All</button>
+            <button class="tab-item" role="tab" aria-selected="false">Research Notes</button>
+            <button class="tab-item" role="tab" aria-selected="false">Agent Logs</button>
+            <button class="tab-item" role="tab" aria-selected="false">Paper Reading</button>
+            <button class="tab-item" role="tab" aria-selected="false">Quiet Journal</button>
+          </nav>
+        </div>
 
+        <div class="posts-list" aria-label="Posts">
+          <!-- Add new posts below. Most recent first. Template:
+          <article class="post-entry">
+            <div class="post-entry-meta">
+              <time datetime="YYYY-MM-DD">Month DD, YYYY</time>
+              <span class="post-type-tag">Category</span>
+            </div>
+            <h2><a href="/posts/slug/">Post Title</a></h2>
+            <p>Brief excerpt or description of the post.</p>
+          </article>
+          -->
 
+          <div class="posts-empty">
+            <p>Posts coming soon. Paper notes, agent logs, project retrospectives — slow, careful writing in progress.</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-
-</main>
-<nav></nav>
-</div>
-
-<script async src="//yihui.org/js/center-img.js"></script>
-
-<footer>
-
-<div class="footer">
-  <ul class="menu">
-    
-  </ul>
-  
-</div>
-</footer>
-
-
-
-
-
-
-
-</body>
+    <footer class="site-footer">
+      <p>© 2026 Lingfeng He. Built as a One Person Lab for research notes, AI crews, and selected work.</p>
+    </footer>
+  </body>
 </html>

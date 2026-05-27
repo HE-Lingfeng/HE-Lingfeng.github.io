@@ -1,32 +1,56 @@
-# HE-Lingfeng.github.io
+# Lingfeng He · Personal Academic Homepage
 
-Lingfeng He's personal website, published with GitHub Pages.
+Personal academic website of Lingfeng He, hosted via GitHub Pages. A hand-crafted static site — semantic HTML, CSS custom properties, vanilla JavaScript. No framework, no build step, no dependencies.
 
-## Site direction
+## Quick Start
 
-This site is designed as a refined, long-term academic homepage rather than a short-lived portfolio splash page. The direction is rational and restrained at the system level, with a small poetic layer for literature, art, and slower personal notes.
+```bash
+# Preview locally
+python3 -m http.server 8000
+# Open http://localhost:8000
 
-- `index.html`: homepage, selected work, research direction, writing gallery, contact.
-- `css/style.css`: global visual system, light/dark theme tokens, responsive layout, and compatibility styles for generated pages.
-- `js/theme.js`: lightweight theme toggle for switching between dark and light appearances.
-- `/posts/`: future writing index for research notes, project logs, paper reading, experiments, and the quiet journal.
+# Deploy — push to main, served automatically by GitHub Pages
+git push origin main
+```
 
-## Design language
+## Project Structure
 
-The current visual style is inspired by X/Twitter's black-and-white restraint and macOS's polished system surfaces. It should feel quiet, technical, and premium rather than decorative.
+```
+.
+├── index.html          # Homepage: hero, selected work, research, writing, contact
+├── css/
+│   ├── style.css       # Design tokens, theme system, layout, glassmorphism, responsive
+│   └── fonts.css       # System font stacks with CJK fallbacks
+├── js/
+│   └── theme.js        # Theme toggle with localStorage persistence
+├── assets/
+│   └── portrait.jpg    # Hero portrait
+├── posts/              # Writing index (Hugo-generated, placeholder)
+├── categories/         # Hugo-generated taxonomy pages
+├── tags/               # Hugo-generated taxonomy pages
+└── 404.html            # Custom 404 page
+```
 
-- **Theme**: dark mode is the default. Keep a matching light mode through `:root[data-theme="light"]`.
-- **Color**: use pure black or pure white as the page background, near-neutral surfaces for cards, and X-style sky blue (`#1d9bf0`) only for primary actions, links, labels, hover borders, and focus-like emphasis.
-- **Typography**: use the Apple/system sans-serif stack throughout (`-apple-system`, `SF Pro Display`, `SF Pro Text`, Inter, Segoe UI, Arial). Avoid mixing serif body text back into the homepage unless a future writing page intentionally needs an editorial mode.
-- **Surfaces**: cards and header use translucent glass-like backgrounds, subtle borders, and soft layered shadows. Keep card corners generous (`--radius-card`) and panel corners slightly larger (`--radius-panel`).
-- **Layout**: prefer spacious, scan-friendly sections with a restrained information hierarchy. Avoid marketing-style hero decorations, gradients, or extra ornamental shapes.
-- **Interaction**: controls should be compact and system-like. Buttons are pill-shaped, theme switching is handled by a small header toggle, and hover states use subtle lift plus blue border/color changes.
+## Design System
 
-## Maintenance plan
+**Dark-first, restrained, technical.** The visual language draws from X/Twitter's black-and-white minimalism and macOS system surfaces — quiet, premium, free of decoration.
 
-1. Keep the homepage curated. Add only selected publications, important projects, and current research directions.
-2. Use posts for accumulation. Put paper notes, experiment write-ups, project retrospectives, and quiet journal entries under `/posts/` instead of expanding the homepage indefinitely.
-3. Add one project page per mature project. Each project page should include motivation, method, links, citation, and representative figures.
-4. Keep the quiet journal restrained. Literature and art can appear as a small writing category, but should not compete with the academic identity of the homepage.
-5. Refresh the homepage quarterly. Update status, publications, links, and research focus without changing the core black/white/blue system language.
-6. Keep the stack lightweight. Prefer semantic HTML and CSS unless the site genuinely needs search, filtering, or richer interaction.
+| Layer | Approach |
+|-------|----------|
+| **Theme** | Dark mode default; light mode via `[data-theme="light"]`. Tokens defined as CSS custom properties. |
+| **Color** | Pure black/white backgrounds, translucent neutral surfaces (`--glass`), sky-blue accent (`#1d9bf0`) reserved for links, actions, and focus states. |
+| **Typography** | System sans-serif stack (`-apple-system`, `SF Pro Display`, Inter, Segoe UI, Arial). Single family throughout; no serif body text on the homepage. |
+| **Surfaces** | Glassmorphism cards with subtle borders, layered shadows, and generous border-radius. Buttons are pill-shaped, controls are compact and system-like. |
+| **Layout** | Spacious, scan-friendly sections. Two breakpoints at 900px and 560px. `clamp()`-based responsive typography. |
+| **Interaction** | Theme toggle in the header. Hover states use subtle lift + blue accent transitions. |
+
+## Content Philosophy
+
+- **Homepage stays curated.** Selected publications, active projects, current research directions. Updated quarterly.
+- **Posts accumulate.** Paper notes, experiment write-ups, project retrospectives, and journal entries live under `/posts/`, not on the homepage.
+- **One page per mature project.** Each includes motivation, method, links, citation, and figures.
+- **Stack stays lightweight.** Semantic HTML and CSS unless the site genuinely needs richer interaction (search, filtering, etc.).
+
+## Deployment
+
+Push to `main` — GitHub Pages serves the site automatically from the root of the repository. No CI pipeline, no build step.
