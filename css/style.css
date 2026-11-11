@@ -247,7 +247,7 @@ main,
 }
 
 .site-nav {
-  gap: clamp(14px, 3vw, 28px);
+  gap: clamp(10px, calc((100vw - 860px) / 4), 28px);
   color: var(--muted);
   font-size: 0.96rem;
 }
@@ -262,6 +262,10 @@ main,
   position: relative;
   padding: 7px 10px;
   border-radius: 999px;
+}
+
+.nav-icon {
+  display: none;
 }
 
 .site-nav a,
@@ -1371,55 +1375,159 @@ td {
 }
 
 @media (max-width: 900px) {
-  .site-header {
-    position: sticky;
-    top: 10px;
-    gap: 10px;
-    margin-top: 10px;
-    padding: 6px 10px;
-    border-radius: 24px;
-    min-height: 0;
-    background: rgba(12, 14, 16, 0.48);
-    backdrop-filter: blur(32px) saturate(1.5);
-    -webkit-backdrop-filter: blur(32px) saturate(1.5);
+  :root {
+    --mobile-page-gutter: 28px;
+    --mobile-nav-height: max(58px, 3.625rem);
+    --mobile-nav-bottom: max(14px, env(safe-area-inset-bottom));
+    --mobile-nav-clearance: calc(var(--mobile-nav-height) + var(--mobile-nav-bottom) + 12px);
   }
-  :root[data-theme="light"] .site-header {
-    background: rgba(255, 255, 255, 0.6);
+
+  html:has(.site-nav) {
+    scroll-padding-bottom: var(--mobile-nav-clearance);
+  }
+
+  .site-header,
+  main,
+  .site-footer {
+    width: auto;
+    margin-left: max(var(--mobile-page-gutter), env(safe-area-inset-left));
+    margin-right: max(var(--mobile-page-gutter), env(safe-area-inset-right));
+  }
+
+  /* The fixed dock needs the viewport as its containing block. */
+  .site-header {
+    position: static;
+    gap: 10px;
+    min-height: 44px;
+    margin-top: 12px;
+    padding: env(safe-area-inset-top) 0 0;
+    border: 0;
+    background: none;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    flex: none;
   }
 
   .brand-text {
-    display: none;
+    white-space: normal;
+    font-size: 0.9rem;
+    line-height: 1.2;
   }
 
   .site-nav {
-    flex: 1;
-    gap: 4px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    font-size: 0.85rem;
-    -webkit-mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
-    mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
+    --nav-solid: var(--surface-soft);
+    --nav-tint: rgba(27, 32, 39, 0.72);
+    --nav-sheen: rgba(237, 246, 255, 0.14);
+    --nav-glint: rgba(222, 237, 255, 0.06);
+    --nav-rim: rgba(233, 243, 255, 0.28);
+    --nav-edge: rgba(240, 247, 255, 0.32);
+    --nav-shadow: rgba(0, 0, 0, 0.36);
+    --nav-selection: rgba(238, 246, 255, 0.15);
+    position: fixed;
+    z-index: 20;
+    right: max(16px, env(safe-area-inset-right));
+    bottom: var(--mobile-nav-bottom);
+    left: max(16px, env(safe-area-inset-left));
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    align-items: stretch;
+    gap: 2px;
+    max-width: 416px;
+    min-height: var(--mobile-nav-height);
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid var(--nav-rim);
+    border-radius: 999px;
+    background: var(--nav-solid);
+    box-shadow: 0 8px 26px var(--nav-shadow), inset 0 1px 0 var(--nav-edge),
+      inset 0 0 10px var(--nav-glint);
+    color: var(--ink);
+    font-size: 0.6875rem;
+    font-weight: 680;
+    line-height: 1.15;
   }
 
-  .site-nav::-webkit-scrollbar {
-    display: none;
+  :root[data-theme="light"] .site-nav {
+    --nav-tint: rgba(247, 250, 254, 0.78);
+    --nav-sheen: rgba(255, 255, 255, 0.48);
+    --nav-glint: rgba(255, 255, 255, 0.36);
+    --nav-rim: rgba(102, 122, 146, 0.28);
+    --nav-edge: rgba(255, 255, 255, 0.96);
+    --nav-shadow: rgba(21, 37, 55, 0.17);
+    --nav-selection: rgba(30, 52, 76, 0.12);
+  }
+
+  @supports ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+    .site-nav {
+      background: linear-gradient(155deg, var(--nav-sheen), transparent 50%, var(--nav-glint)),
+        var(--nav-tint);
+      -webkit-backdrop-filter: blur(13px) saturate(1.65);
+      backdrop-filter: blur(13px) saturate(1.65);
+    }
   }
 
   .site-nav a {
-    flex-shrink: 0;
-    padding: 6px 12px;
-    white-space: nowrap;
-  }
-
-  .header-actions {
-    flex: 1;
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
     min-width: 0;
+    min-height: 46px;
+    padding: 4px 0;
+    text-align: center;
+    overflow-wrap: anywhere;
+    touch-action: manipulation;
   }
 
-  .theme-toggle {
-    flex-shrink: 0;
+  .site-nav a::after {
+    display: none;
+  }
+
+  .site-nav a:hover {
+    color: inherit;
+    background: var(--cell);
+    box-shadow: none;
+  }
+
+  .site-nav a[aria-current],
+  .site-nav a:active {
+    background: var(--nav-selection);
+    box-shadow: inset 0 1px 0 var(--nav-glint);
+  }
+
+  .site-nav a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+
+  .nav-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    flex: none;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .site-footer {
+    padding-bottom: var(--mobile-nav-clearance);
+  }
+
+  .section {
+    scroll-margin-top: max(14px, env(safe-area-inset-top));
   }
 
   .hero,
@@ -1469,10 +1577,8 @@ td {
 }
 
 @media (max-width: 560px) {
-  .site-header,
-  main,
-  .site-footer {
-    width: min(100% - 36px, 1160px);
+  :root {
+    --mobile-page-gutter: 18px;
   }
 
   h1 {
@@ -1540,5 +1646,19 @@ td {
 
   .contact-links {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 900px) and (prefers-reduced-transparency: reduce) {
+  .site-nav {
+    background: var(--nav-solid);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
   }
 }
