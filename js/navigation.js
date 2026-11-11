@@ -1,15 +1,19 @@
 (() => {
-  const sections = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'))
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  const sections = Array.from(header.querySelectorAll('.site-nav a[href^="#"]'))
     .map((link) => ({ link, section: document.getElementById(link.hash.slice(1)) }))
     .filter(({ section }) => section);
-
-  if (sections.length === 0) return;
 
   let currentLink;
   let frame;
 
-  const updateCurrentSection = () => {
+  const updateNavigation = () => {
     frame = undefined;
+    header.toggleAttribute("data-scrolled", window.scrollY > 12);
+    if (sections.length === 0) return;
+
     const marker = Math.max(108, window.innerHeight * 0.25);
     const atBottom = window.scrollY + window.innerHeight >=
       document.documentElement.scrollHeight - 1;
@@ -31,7 +35,7 @@
   };
 
   const scheduleUpdate = () => {
-    if (frame === undefined) frame = requestAnimationFrame(updateCurrentSection);
+    if (frame === undefined) frame = requestAnimationFrame(updateNavigation);
   };
 
   window.addEventListener("scroll", scheduleUpdate, { passive: true });
