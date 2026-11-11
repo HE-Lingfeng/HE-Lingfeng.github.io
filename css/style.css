@@ -748,6 +748,31 @@ footer a,
   color: var(--subtle);
 }
 
+.work-meta-labels {
+  display: grid;
+  align-content: start;
+  gap: inherit;
+}
+
+.work-figure {
+  display: block;
+  border-radius: 8px;
+}
+
+.work-meta > .work-figure {
+  margin-top: 10px;
+}
+
+.work-figure img {
+  width: 100%;
+  border-radius: inherit;
+}
+
+.work-figure:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 .publication-status {
   color: var(--gold);
 }
@@ -1575,6 +1600,15 @@ td {
   .hero {
     min-height: auto;
     padding: 34px 0 72px;
+  }
+
+  .work-meta:has(> .work-figure) {
+    grid-template-columns: minmax(0, 1fr) min(48%, 165px);
+    align-items: start;
+  }
+
+  .work-meta > .work-figure {
+    margin-top: 0;
   }
 
   .lab-console,
